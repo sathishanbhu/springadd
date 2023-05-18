@@ -6,22 +6,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import greens.learn.salmple.entity.SampleAdminTable;
-import greens.learn.salmple.service.SampleService;
+import greens.learn.salmple.entity.AdminTable;
+import greens.learn.salmple.service.AdminService;
 
 @RestController
 @RequestMapping("/admin")
-public class SampleController {
+public class AdminController {
 	
 	@Autowired
-	SampleService sampleService;
+	AdminService adminService;
 	
 	
-	@PostMapping("/add")
-	public SampleAdminTable createUser(@RequestBody SampleAdminTable sampleAdminTable)
+	@PostMapping("/save")
+	public AdminTable createAdmin(@RequestBody AdminTable adminTable)
 	{	
-		sampleService.user(sampleAdminTable);
-		return sampleAdminTable;		
+		adminService.createAdmin(adminTable);
+		return adminTable;		
 	}
 
 }
