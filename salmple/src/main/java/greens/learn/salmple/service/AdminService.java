@@ -10,7 +10,5 @@ public interface AdminService {
 	public AdminTable createAdmin(AdminTable adminTable);
 	public List<AdminTable> showAdmin();
 	public Optional<AdminTable> getAdmin(int adminTable);
-	
-	
-
+	public List<Character> getFlag(Character character);		
 }

@@ -1,5 +1,6 @@
 package greens.learn.salmple.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,6 +36,18 @@ public class AdminServiceImpl implements AdminService {
 		
 		Optional<AdminTable> adminTable=adminRepo.findById(id);
 		return adminTable;
+	}
+
+	@Override
+	public List<Character> getFlag(Character adminFlag) {
+		
+		List<AdminTable> adminTable=adminRepo.findByAdminFlag(adminFlag);
+		List<Character> flagList=new ArrayList<Character>();
+		for(AdminTable flag:adminTable) {
+		flagList.add(flag.getAdminFlag());
+		}
+		
+		return flagList;
 	}
 
 }
