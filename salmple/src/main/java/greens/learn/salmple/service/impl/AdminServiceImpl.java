@@ -25,6 +25,21 @@ public class AdminServiceImpl implements AdminService {
 	}
 	
 	@Override
+	public AdminTable updateAdmin(AdminTable adminTable) {
+		
+		adminRepo.save(adminTable);
+		return adminTable;
+	}
+	
+	@Override
+	public List<AdminTable> deleteAdmin(Integer adminTableId) {
+		
+		adminRepo.deleteById(adminTableId);
+		List<AdminTable> adminTable=showAdmin();
+		return adminTable;
+	}
+	
+	@Override
 	public List<AdminTable> showAdmin() {
 		
 		List<AdminTable> adminTable=adminRepo.findAll();
